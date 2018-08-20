@@ -4,6 +4,8 @@
 
 #include <AbstractButton.h>
 
-class OneClickButton {
-    
+class OneClickButton : AbstractButton {
+    public: 
+        OneClickButton();
+        ~OneClickButton();
 }
