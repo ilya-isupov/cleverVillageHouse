@@ -1,5 +1,7 @@
 class PelletBurner {
     public:
-        PelletBurner();
-        ~PelletBurner();
+        PelletBurner() {};
+        ~PelletBurner() {};
+        void setup() {};
+        void run() {};
 };

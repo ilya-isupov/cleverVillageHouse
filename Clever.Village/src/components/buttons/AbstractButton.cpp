@@ -1,20 +1,11 @@
-#include "Arduino.h"
+#include "../common/HardwareUnit.cpp"
 
-
-class AbstractButton {
+class AbstractButton : HardwareUnit {
     public:
-        AbstractButton();
+        AbstractButton() {};
         AbstractButton(unsigned int pin, int mode) {
-            this->setPinMode(pin, mode);
+            HardwareUnit(pin, mode);
         };
-        ~AbstractButton();
-        void setPinMode(unsigned int pin, int mode) {
-            this->pinMode = mode;
-            this->pin = pin;
-            Arduino_h::pinMode(pin, mode);
-        }
-    
-    private:
-        unsigned int pin;
-        int pinMode;        
+        ~AbstractButton() {};
+              
 };
