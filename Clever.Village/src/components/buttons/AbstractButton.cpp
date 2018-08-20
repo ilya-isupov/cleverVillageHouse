@@ -15,6 +15,5 @@ class AbstractButton {
     
     private:
         unsigned int pin;
-        int pinMode;
-        
+        int pinMode;        
 };
