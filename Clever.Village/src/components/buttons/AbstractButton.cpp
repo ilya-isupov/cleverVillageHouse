@@ -3,6 +3,7 @@
 
 class AbstractButton {
     public:
+        AbstractButton();
         AbstractButton(unsigned int pin, int mode) {
             this->setPinMode(pin, mode);
         };

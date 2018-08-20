@@ -2,6 +2,9 @@
 
 class ClickButton : AbstractButton {
     public:
-        ClickButton(unsigned int pin, int mode);
+        ClickButton();
+        ClickButton(unsigned int pin, int mode) {
+            AbstractButton(pin, mode);
+        };
         ~ClickButton();
 };
