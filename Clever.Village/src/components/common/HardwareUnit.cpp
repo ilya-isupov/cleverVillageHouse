@@ -1,3 +1,6 @@
+#ifndef HardwareUnit_cpp
+#define HardwareUnit_cpp
+
 #include "Arduino.h"
 
 class HardwareUnit {
@@ -18,3 +21,5 @@ class HardwareUnit {
         int pinMode;        
 
 };
+
+#endif

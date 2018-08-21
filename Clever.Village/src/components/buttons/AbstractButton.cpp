@@ -1,3 +1,6 @@
+#ifndef Abstract_Button_cpp
+#define Abstract_Button_cpp
+
 #include "../common/HardwareUnit.cpp"
 
 class AbstractButton : HardwareUnit {
@@ -9,3 +12,5 @@ class AbstractButton : HardwareUnit {
         ~AbstractButton() {};
               
 };
+
+#endif

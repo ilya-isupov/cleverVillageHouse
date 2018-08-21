@@ -1,3 +1,6 @@
+#ifndef Click_Button_cpp
+#define Click_Button_cpp
+
 #include "AbstractButton.cpp"
 
 class ClickButton : AbstractButton {
@@ -8,3 +11,5 @@ class ClickButton : AbstractButton {
         };
         ~ClickButton();
 };
+
+#endif
