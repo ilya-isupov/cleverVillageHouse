@@ -1,3 +1,6 @@
+#ifndef Abstract_Temperature_Sensor_cpp
+#define Abstract_Temperature_Sensor_cpp
+
 #include "../common/HardwareUnit.cpp"
 
 class AbstractTemperatureSensor : HardwareUnit {
@@ -8,3 +11,5 @@ class AbstractTemperatureSensor : HardwareUnit {
         }
         ~AbstractTemperatureSensor() {};
 };
+
+#endif

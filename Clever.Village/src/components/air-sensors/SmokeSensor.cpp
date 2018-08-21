@@ -1,0 +1,15 @@
+#ifndef Smoke_Sensor_cpp
+#define Smoke_Sensor_cpp
+
+#include "AbstractAirSensor.cpp"
+
+class SmokeSensor : AbstractAirSensor {
+    public:
+        SmokeSensor() {};
+        SmokeSensor(unsigned int pin, int mode) {
+            AbstractAirSensor(pin, mode);
+        };
+        ~SmokeSensor() {};
+};
+
+#endif
