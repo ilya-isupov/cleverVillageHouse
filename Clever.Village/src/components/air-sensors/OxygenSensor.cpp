@@ -6,9 +6,7 @@
 class OxygenSensor : AbstractAirSensor {
     public:
         OxygenSensor() {};
-        OxygenSensor(unsigned int pin, int mode) {
-            AbstractAirSensor(pin, mode);
-        };
+        OxygenSensor(unsigned int pin, int mode) : AbstractAirSensor(pin, mode) {};
         ~OxygenSensor() {};
 };
 

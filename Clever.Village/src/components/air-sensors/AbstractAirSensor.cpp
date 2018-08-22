@@ -6,9 +6,7 @@
 class AbstractAirSensor : HardwareUnit {
     public:
         AbstractAirSensor() {};
-        AbstractAirSensor(unsigned int pin, int mode) {
-            HardwareUnit(pin, mode);
-        }
+        AbstractAirSensor(unsigned int pin, int mode) : HardwareUnit(pin, mode) {};
         ~AbstractAirSensor() {};
 };
 
