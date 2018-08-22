@@ -3,9 +3,9 @@
 
 #include "../common/HardwareUnit.cpp"
 
-class AbstractTemperatureSensor : HardwareUnit {
+class AbstractTemperatureSensor : public HardwareUnit {
     public:
-        AbstractTemperatureSensor() {};
+        AbstractTemperatureSensor() : HardwareUnit() {};
         AbstractTemperatureSensor(unsigned int pin, int mode) : HardwareUnit(pin, mode) {};
         ~AbstractTemperatureSensor() {};
 };

@@ -3,9 +3,9 @@
 
 #include "AbstractAirSensor.cpp"
 
-class SmokeSensor : AbstractAirSensor {
+class SmokeSensor : public AbstractAirSensor {
     public:
-        SmokeSensor() {};
+        SmokeSensor() : AbstractAirSensor() {};
         SmokeSensor(unsigned int pin, int mode) : AbstractAirSensor(pin, mode) {};
         ~SmokeSensor() {};
 };

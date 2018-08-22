@@ -3,7 +3,7 @@
 
 #include "AbstractButton.cpp"
 
-class ClickButton : AbstractButton
+class ClickButton : public AbstractButton
 {
 
     unsigned int pin = 0;
@@ -14,7 +14,7 @@ class ClickButton : AbstractButton
     unsigned long last_press;
 
   public:
-    ClickButton(){};
+    ClickButton() : AbstractButton() {};
     ClickButton(unsigned int pin, int mode) : AbstractButton(pin, mode){};
     ~ClickButton();
 

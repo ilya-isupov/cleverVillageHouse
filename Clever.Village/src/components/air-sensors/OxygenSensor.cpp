@@ -3,9 +3,9 @@
 
 #include "AbstractAirSensor.cpp"
 
-class OxygenSensor : AbstractAirSensor {
+class OxygenSensor : public AbstractAirSensor {
     public:
-        OxygenSensor() {};
+        OxygenSensor() : AbstractAirSensor() {};
         OxygenSensor(unsigned int pin, int mode) : AbstractAirSensor(pin, mode) {};
         ~OxygenSensor() {};
 };

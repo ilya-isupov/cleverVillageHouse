@@ -3,9 +3,9 @@
 
 #include "../common/HardwareUnit.cpp"
 
-class AbstractAirSensor : HardwareUnit {
+class AbstractAirSensor : public HardwareUnit {
     public:
-        AbstractAirSensor() {};
+        AbstractAirSensor() : HardwareUnit() {};
         AbstractAirSensor(unsigned int pin, int mode) : HardwareUnit(pin, mode) {};
         ~AbstractAirSensor() {};
 };

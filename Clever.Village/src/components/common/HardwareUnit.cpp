@@ -15,7 +15,7 @@ class HardwareUnit {
             this->pinMode = mode;
             this->pin = pin;
             Arduino_h::pinMode(pin, mode);
-        } 
+        }
     protected:
         unsigned int pin;
         int pinMode;        

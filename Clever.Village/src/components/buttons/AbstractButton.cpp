@@ -3,9 +3,9 @@
 
 #include "../common/HardwareUnit.cpp"
 
-class AbstractButton : HardwareUnit {
+class AbstractButton : public HardwareUnit {
     public:
-        AbstractButton() {};
+        AbstractButton() : HardwareUnit() {};
         AbstractButton(unsigned int pin, int mode) : HardwareUnit(pin, mode) {};
         ~AbstractButton() {};
               
