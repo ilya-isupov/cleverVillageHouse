@@ -1,7 +1,10 @@
 #include "ClickButton.h"
 
     ClickButton::ClickButton() : AbstractButton() {};
-    ClickButton::ClickButton(unsigned int pin, int mode) : AbstractButton(pin, mode){};
+    ClickButton::ClickButton(unsigned int pint, int modet) : AbstractButton(pin, mode){
+		pin = pint;
+		mode = modet;
+	};
     ClickButton::~ClickButton();
 
     boolean ClickButton::ClickButtonOnce()

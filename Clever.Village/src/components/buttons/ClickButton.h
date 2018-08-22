@@ -6,14 +6,12 @@
 class ClickButton : public AbstractButton
 {
     unsigned int pin;
-    boolean butt_flag;
-    boolean butt;
-    boolean led_flag;
+	int mode;
     unsigned long last_press;
 
   public:
     ClickButton() : AbstractButton() {};
-    ClickButton(unsigned int pin, int mode) : AbstractButton(pin, mode){};
+    ClickButton(unsigned int pint, int mode) : AbstractButton(pin, mode){};
     ~ClickButton();
 
     boolean ClickButtonOnce(){};
