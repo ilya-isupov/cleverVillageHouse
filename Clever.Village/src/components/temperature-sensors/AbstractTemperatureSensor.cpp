@@ -1,7 +1,7 @@
 #ifndef Abstract_Temperature_Sensor_cpp
 #define Abstract_Temperature_Sensor_cpp
 
-#include "../common/HardwareUnit.cpp"
+#include "../common/HardwareUnit.h"
 
 class AbstractTemperatureSensor : public HardwareUnit {
     public:

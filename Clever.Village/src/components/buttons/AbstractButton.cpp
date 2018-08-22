@@ -1,7 +1,7 @@
 #ifndef Abstract_Button_cpp
 #define Abstract_Button_cpp
 
-#include "../common/HardwareUnit.cpp"
+#include "../common/HardwareUnit.h"
 
 class AbstractButton : public HardwareUnit
 {
