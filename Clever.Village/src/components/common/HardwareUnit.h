@@ -5,17 +5,17 @@
 
 class HardwareUnit
 {
-  public:
-    HardwareUnit();
-    HardwareUnit(unsigned int pin, int mode);
-    ~HardwareUnit();
+public:
+  HardwareUnit();
+  HardwareUnit(unsigned int pin, int mode);
+  ~HardwareUnit();
 
-    void setPinMode(unsigned int pin, int mode);
-    void setup();
-    void run();
+  void setup();
+  void run();
 
-  protected:
-    unsigned int pin;
-    int pinMode;
+protected:
+  void setPinMode(unsigned int pin, int mode);
+  unsigned int pin;
+  int pinMode;
 };
 #endif
