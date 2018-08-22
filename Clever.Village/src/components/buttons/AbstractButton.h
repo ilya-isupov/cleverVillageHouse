@@ -1,16 +1,16 @@
-#ifndef Abstract_Button_cpp
-#define Abstract_Button_cpp
+#ifndef Abstract_Button_h
+#define Abstract_Button_h
 
 #include "../common/HardwareUnit.h"
 
 class AbstractButton : public HardwareUnit
 {
   public:
-    AbstractButton() : HardwareUnit(){};
-    AbstractButton(unsigned int pin, int mode) : HardwareUnit(pin, mode){};
-    ~AbstractButton(){};
-    inline virtual void onClick(){};
-    inline virtual void onHold(){};
+    AbstractButton();
+    AbstractButton(unsigned int pin, int mode);
+    ~AbstractButton();
+    inline virtual void onClick();
+    inline virtual void onHold();
     void run();
 };
 

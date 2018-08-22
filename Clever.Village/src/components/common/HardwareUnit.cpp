@@ -3,9 +3,9 @@
 HardwareUnit::HardwareUnit() {}
 HardwareUnit::~HardwareUnit() {}
 HardwareUnit::HardwareUnit(unsigned int pin, int mode)
-    {
-        this->setPinMode(pin, mode);
-    };
+{
+    this->setPinMode(pin, mode);
+};
 
 void HardwareUnit::setPinMode(unsigned int pin, int mode)
 {

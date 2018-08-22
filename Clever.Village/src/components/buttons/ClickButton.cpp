@@ -5,7 +5,7 @@
 		pin = pint;
 		mode = modet;
 	};
-    ClickButton::~ClickButton();
+    ClickButton::~ClickButton() {};
 
     boolean ClickButton::ClickButtonOnce()
     {

@@ -11,6 +11,8 @@ class HardwareUnit
     ~HardwareUnit();
 
     void setPinMode(unsigned int pin, int mode);
+    void setup();
+    void run();
 
   protected:
     unsigned int pin;

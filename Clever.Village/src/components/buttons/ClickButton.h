@@ -1,7 +1,7 @@
-#ifndef Click_Button_cpp
-#define Click_Button_cpp
+#ifndef Click_Button_h
+#define Click_Button_h
 
-#include "AbstractButton.cpp"
+#include "AbstractButton.h"
 
 class ClickButton : public AbstractButton
 {
@@ -10,13 +10,12 @@ class ClickButton : public AbstractButton
     unsigned long last_press;
 
   public:
-    ClickButton() : AbstractButton() {};
-    ClickButton(unsigned int pint, int mode) : AbstractButton(pin, mode){};
+    ClickButton();
+    ClickButton(unsigned int pint, int mode);
     ~ClickButton();
 
-    boolean ClickButtonOnce(){};
-
-    boolean HoldButton(){};
+    boolean ClickButtonOnce();
+    boolean HoldButton();
 };
 
 #endif
