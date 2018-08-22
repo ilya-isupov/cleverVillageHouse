@@ -10,8 +10,8 @@ public:
   HardwareUnit(unsigned int pin, int mode);
   ~HardwareUnit();
 
-  void setup();
-  void run();
+  virtual void setup();
+  virtual void run();
 
 protected:
   void setPinMode(unsigned int pin, int mode);

@@ -11,7 +11,8 @@ class AbstractButton : public HardwareUnit
     ~AbstractButton();
     inline virtual void onClick();
     inline virtual void onHold();
-    void run();
+    virtual void run();
+    virtual void setup();
 };
 
 #endif

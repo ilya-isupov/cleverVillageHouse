@@ -7,6 +7,9 @@ HardwareUnit::HardwareUnit(unsigned int pin, int mode)
     this->setPinMode(pin, mode);
 };
 
+void HardwareUnit::run() {}
+void HardwareUnit::setup() {}
+
 void HardwareUnit::setPinMode(unsigned int pin, int mode)
 {
     this->pinMode = mode;
