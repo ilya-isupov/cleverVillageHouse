@@ -10,39 +10,38 @@
         pinMode(pin, mode);
     }
     void ClickButton::buttonDeBounce() {
-  if (button1S && !button1Flag && millis() - button1timer > debounce) {
-    button1Flag = 1;
-    button1HO = 1;
-    button1timer = millis();
+  if (isState && !isPressing && millis() - lastTimeReleased > debounce) {
+    isPressing = 1;
+    lastTimeReleased = millis();
       }
     }
     void ClickButton::buttonBeforeHold() {
-      if (!button1S && button1Flag && !button1Release && !button1DP && millis() - button1timer < hold) {
-        button1Release = 1;
-        button1Flag = 0;
-        button1double = millis();
+      if (!isState && isPressing && !isReleased && millis() - lastTimeReleased < hold) {
+        isReleased = 1;
+        isPressing = 0;
+        timeDouble = millis();
       }
     }
     void ClickButton::buttonAfterDoubleTimer() {
-       if (button1Release && !button1DP && millis() - button1double > doubletimer) {
-        button1Release = 0;
-        button1Press = 1;
+       if (isReleased && millis() - timeDouble > doubletimer) {
+        isReleased = 0;
+        isPress = 1;
   }
     }
     void ClickButton::buttonAfterHold() {
         // Если удерживается более hold, то считать удержанием
-  if (button1Flag && !buttonDouble && !button1Hold && millis() - button1timer > hold) {
-    button1Hold = 1;
+  if (isPressing && !isHold && millis() - lastTimeReleased > hold) {
+    isHold = 1;
   }
   // Если отпущена после hold, то считать, что была удержана
-  if (!button1S && button1Flag && millis() - button1timer > hold) {
-    button1Flag = 0;
-    button1Hold = 0;
-    button1timer = millis();
+  if (!isState && isPressing && millis() - lastTimeReleased > hold) {
+    isPressing = 0;
+    isHold = 0;
+    lastTimeReleased = millis();
   }
     }
     void ClickButton::run() {
-      button1S = !digitalRead(pin);
+      isState = !digitalRead(pin);
      ClickButton::buttonDeBounce(); // нажали (с антидребезгом)
      ClickButton::buttonBeforeHold(); // если отпустили до hold, считать отпущенной
      ClickButton::buttonAfterDoubleTimer();  // если отпустили и прошло больше double_timer, считать 1 нажатием
@@ -51,8 +50,8 @@
     boolean ClickButton::isClickButtonOnce()
     {
 		boolean res;
-		if (button1Press) {
-            button1Press = 0;
+		if (isPress) {
+            isPress = 0;
             res = true;
         } else 
         res = false;
@@ -62,8 +61,8 @@
     boolean ClickButton::isHoldButton()
     {
         boolean res;
-		if (button1Hold) {
-            button1Hold = 0;
+		if (isHold) {
+            isHold = 0;
             res = true;
         } else 
         res = false;
