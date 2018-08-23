@@ -15,7 +15,7 @@ public:
 
 protected:
   void setPinMode(unsigned int pin, int mode);
-  unsigned int pin;;
+  unsigned int pin;
   int pinWorkMode;
 };
 #endif
