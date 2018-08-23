@@ -6,7 +6,7 @@
 class AbstractTemperatureSensor : public SimpleHardwareUnit {
     public:
         AbstractTemperatureSensor() : SimpleHardwareUnit() {};
-        AbstractTemperatureSensor(unsigned int pin) : SimpleHardwareUnit(pin, INPUT_PULLUP) {};
+        AbstractTemperatureSensor(unsigned int pin) : SimpleHardwareUnit(pin, INPUT) {};
         ~AbstractTemperatureSensor() {};
 };
 
