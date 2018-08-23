@@ -5,25 +5,19 @@
 
 class ClickButton : public AbstractButton
 {
-    unsigned int pin;
-	int mode;
     
-    boolean isState;   // храним состояния кнопок (S - State)
+    boolean state;   // храним состояния кнопок (S - State)
     boolean isPressing;   // флажки кнопок (F - Flag)
     boolean isReleased;   // флажки кнопок на отпускание (R - Release)
-    boolean isPress;   // флажки кнопок на нажатие (P - Press)
-    boolean isHold;   // флажки кнопок на удержание (многократный вызов) (H - Hold)
+    boolean isClicked;   // флажки кнопок на нажатие (P - Press)
+    boolean isHolding;   // флажки кнопок на удержание (многократный вызов) (H - Hold)
 
-    #define doubletimer 100   // время (мс), отведённое на второе нажатие
-    #define hold 500           // время (мс), после которого кнопка считается зажатой
-    #define debounce 80        // (мс), антидребезг
+    #define holdTime 500           // время (мс), после которого кнопка считается зажатой
+    #define debounceTime 80        // (мс), антидребезг
     unsigned long lastTimeReleased; // таймер последнего нажатия кнопки
-    unsigned long timeDouble; // таймер двойного нажатия кнопки
-
-    void buttonDeBounce();
-    void buttonBeforeHold();
-    void buttonAfterDoubleTimer();
-    void buttonAfterHold();
+    void checkDebounce();
+    void checkHoldReleased();
+    void checkHeld();
   public:
     ClickButton();
     ClickButton(unsigned int pint, int mode);
