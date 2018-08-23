@@ -43,10 +43,22 @@
     }
     boolean ClickButton::ClickButtonOnce()
     {
-		
+		boolean res;
+		if (button1P) {
+            button1P = 0;
+            res = true;
+        } else 
+        res = false;
+        return res;
     }
 
     boolean ClickButton::HoldButton()
     {
-        
+        boolean res;
+		if (button1H) {
+            button1H = 0;
+            res = true;
+        } else 
+        res = false;
+        return res;
     }
