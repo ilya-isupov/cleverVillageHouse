@@ -1,7 +1,7 @@
 #include "AbstractButton.h"
 
-AbstractButton::AbstractButton() : HardwareUnit(){};
-AbstractButton::AbstractButton(unsigned int pin, int mode) : HardwareUnit(pin, mode){};
+AbstractButton::AbstractButton() : SimpleHardwareUnit(){};
+AbstractButton::AbstractButton(unsigned int pin) : SimpleHardwareUnit(pin, INPUT_PULLUP){};
 AbstractButton::~AbstractButton(){};
 void AbstractButton::run() {}
 void AbstractButton::setup() {}

@@ -1,7 +1,7 @@
 #include "ClickButton.h"
 
     ClickButton::ClickButton() : AbstractButton() {};
-    ClickButton::ClickButton(unsigned int pin, int mode) : AbstractButton(pin, mode){
+    ClickButton::ClickButton(unsigned int pin) : AbstractButton(pin){
         
 	};
     ClickButton::~ClickButton() {};

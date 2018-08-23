@@ -1,12 +1,12 @@
 #ifndef Abstract_Air_Sensor_cpp
 #define Abstract_Air_Sensor_cpp
 
-#include "../common/HardwareUnit.h"
+#include "../common/SimpleHardwareUnit.h"
 
-class AbstractAirSensor : public HardwareUnit {
+class AbstractAirSensor : public SimpleHardwareUnit {
     public:
-        AbstractAirSensor() : HardwareUnit() {};
-        AbstractAirSensor(unsigned int pin, int mode) : HardwareUnit(pin, mode) {};
+        AbstractAirSensor() : SimpleHardwareUnit() {};
+        AbstractAirSensor(unsigned int pin) : SimpleHardwareUnit(pin, INPUT_PULLUP) {};
         ~AbstractAirSensor() {};
 };
 
