@@ -12,7 +12,7 @@ void HardwareUnit::setup() {}
 
 void HardwareUnit::setPinMode(unsigned int pin, int mode)
 {
-    this->pinMode = mode;
+    this->pinWorkMode = mode;
     this->pin = pin;
-    Arduino_h::pinMode(pin, mode);
+    pinMode(pin, mode);
 };
