@@ -39,7 +39,7 @@
      ClickButton::checkHoldReleased(); // если отпустили до hold, считать отпущенной
      ClickButton::checkHeld(); // после удержания
     }
-    boolean ClickButton::isClickButtonOnce()
+    boolean ClickButton::wasClicked()
     {
 	//	boolean res;
 		if (isClicked) {
@@ -51,7 +51,7 @@
         return false;
     }
 
-    boolean ClickButton::isHoldButton()
+    boolean ClickButton::wasHold()
     {
        // boolean res;
 		if (isHolding) {

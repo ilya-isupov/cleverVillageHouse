@@ -25,8 +25,8 @@ class ClickButton : public AbstractButton
     void setup();
     void run();
 
-    boolean isClickButtonOnce();
-    boolean isHoldButton();
+    boolean wasClicked();
+    boolean wasHold();
 };
 
 #endif
