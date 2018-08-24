@@ -3,16 +3,16 @@
 DHT::DHT(uint8_t type, uint8_t count) 
  {
    _type = type;	 
-   _firstreading = true;
-   _lastreadtime = 0;
+   firstreading = true;
+   lastreadtime = 0;
  }
 
 int DHT::readTemperature(int PINS) 
 {
-   _pin = PINS;	
-   _bit = digitalPinToBitMask(_pin);
-   _port = digitalPinToPort(_pin);
-   _maxcycles = microsecondsToClockCycles(1000);  
+   pin = PINS;	
+   bit = digitalPinToBitMask(pin);
+   port = digitalPinToPort(pin);
+   maxcycles = microsecondsToClockCycles(1000);  
  
   int f = NAN;
   
@@ -43,10 +43,10 @@ int DHT::readTemperature(int PINS)
 
 int DHT::readHumidity(int PONS) 
  {
-   _pin = PONS;	
-   _bit = digitalPinToBitMask(_pin);
-   _port = digitalPinToPort(_pin);
-   _maxcycles = microsecondsToClockCycles(1000); 
+   pin = PONS;	
+   bit = digitalPinToBitMask(pin);
+   port = digitalPinToPort(pin);
+   maxcycles = microsecondsToClockCycles(1000); 
    	 
    int f = NAN;
    if(read()) 
@@ -73,47 +73,47 @@ int DHT::readHumidity(int PONS)
 boolean DHT::read(void) 
 {
   uint32_t currenttime = millis();
-  if(currenttime < _lastreadtime) 
+  if(currenttime < lastreadtime) 
     {
-      _lastreadtime = 0;
+      lastreadtime = 0;
     }
     
-  if(!_firstreading && ((currenttime - _lastreadtime) < 2000)) 
+  if(!firstreading && ((currenttime - lastreadtime) < 2000)) 
     {
-      return _lastresult; 
+      return lastresult; 
     }
     
-  _firstreading = false;
-  _lastreadtime = millis();
+  firstreading = false;
+  lastreadtime = millis();
 
   data[0] = data[1] = data[2] = data[3] = data[4] = 0;
 
-  digitalWrite(_pin, HIGH);
+  digitalWrite(pin, HIGH);
   delay(50);//////////////////////// Изначально это значение было - 250. Если что-то будет работать "криво",
   ////////////////////////////////// попробуйте увеличивать значение с 50-ти до 60 и т.д.
 
-  pinMode(_pin, OUTPUT);
-  digitalWrite(_pin, LOW);
+  pinMode(pin, OUTPUT);
+  digitalWrite(pin, LOW);
   delay(20); 
 
   uint32_t cycles[80];
   {
     InterruptLock lock;
-    digitalWrite(_pin, HIGH);
+    digitalWrite(pin, HIGH);
     delayMicroseconds(40);
-    pinMode(_pin, INPUT);
+    pinMode(pin, INPUT);
     delayMicroseconds(10);  
 
     if(expectPulse(LOW) == 0) 
      {
-      _lastresult = false;
-      return _lastresult;
+      lastresult = false;
+      return lastresult;
      }
      
     if(expectPulse(HIGH) == 0) 
      {
-      _lastresult = false;
-      return _lastresult;
+      lastresult = false;
+      return lastresult;
      }
 
 
@@ -130,8 +130,8 @@ boolean DHT::read(void)
      uint32_t highCycles = cycles[2*i+1];
      if((lowCycles == 0) || (highCycles == 0)) 
       {
-        _lastresult = false;
-        return _lastresult;
+        lastresult = false;
+        return lastresult;
       }
     data[i/8] <<= 1;
 
@@ -144,24 +144,24 @@ boolean DHT::read(void)
 
   if(data[4] == ((data[0] + data[1] + data[2] + data[3]) & 0xFF)) 
    {
-     _lastresult = true;
-     return _lastresult;
+     lastresult = true;
+     return lastresult;
    }
    
   else 
    {
-     _lastresult = false;
-     return _lastresult;
+     lastresult = false;
+     return lastresult;
    }
 }
 
 uint32_t DHT::expectPulse(bool level) 
  {
     uint32_t count = 0;
-    uint8_t portState = level ? _bit : 0;
-    while((*portInputRegister(_port) & _bit) == portState) 
+    uint8_t portState = level ? bit : 0;
+    while((*portInputRegister(port) & bit) == portState) 
      {
-      if(count++ >= _maxcycles) 
+      if(count++ >= maxcycles) 
        {
         return 0;
        }

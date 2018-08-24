@@ -17,10 +17,10 @@ class DHT : public AbstractTemperatureSensor{
 
  private:
   uint8_t data[6];
-  uint8_t _pin, _type, _bit, _port;
-  uint32_t _lastreadtime, _maxcycles;
-  bool _firstreading;
-  bool _lastresult;
+  uint8_t pin, _type, bit, port;
+  uint32_t lastreadtime, maxcycles;
+  bool firstreading;
+  bool lastresult;
 
   uint32_t expectPulse(bool level);
 
