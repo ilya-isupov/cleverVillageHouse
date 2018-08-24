@@ -21,7 +21,7 @@ class ClickButton : public AbstractButton
     unsigned long getIdleTime();
   public:
     ClickButton();
-    ClickButton(unsigned int pint, int mode);
+    ClickButton(unsigned int pin);
     ~ClickButton();
     void setup();
     void run();
