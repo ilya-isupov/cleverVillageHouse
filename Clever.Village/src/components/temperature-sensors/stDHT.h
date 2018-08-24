@@ -1,12 +1,8 @@
 #ifndef DHT_H
 #define DHT_H
 
-#if ARDUINO >= 100
- #include "Arduino.h"
-#else
- #include "WProgram.h"
-#endif
 #include "AbstractTemperatureSensor.h"
+
 #define DHT11 11
 #define DHT22 22
 #define DHT21 21
