@@ -1,13 +1,9 @@
-#ifndef Abstract_Temperature_Sensor_cpp
-#define Abstract_Temperature_Sensor_cpp
+#include "AbstractTemperatureSensor.h"
 
-#include "../common/HardwareUnit.h"
-
-class AbstractTemperatureSensor : public HardwareUnit {
-    public:
-        AbstractTemperatureSensor() : HardwareUnit() {};
-        AbstractTemperatureSensor(unsigned int pin, int mode) : HardwareUnit(pin, mode) {};
-        ~AbstractTemperatureSensor() {};
-};
-
-#endif
+        AbstractTemperatureSensor::AbstractTemperatureSensor() : HardwareUnit() {};
+        AbstractTemperatureSensor::AbstractTemperatureSensor(unsigned int pin, int mode) : HardwareUnit(pin, mode) {
+            
+        };
+        AbstractTemperatureSensor::~AbstractTemperatureSensor() {};
+        void AbstractTemperatureSensor::setup(){};
+        void AbstractTemperatureSensor::run(){};
