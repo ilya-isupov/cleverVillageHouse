@@ -1,7 +1,7 @@
 #include "AbstractTemperatureSensor.h"
 
-        AbstractTemperatureSensor::AbstractTemperatureSensor() : HardwareUnit() {};
-        AbstractTemperatureSensor::AbstractTemperatureSensor(unsigned int pin, int mode) : HardwareUnit(pin, mode) {
+        AbstractTemperatureSensor::AbstractTemperatureSensor() : SimpleHardwareUnit() {};
+        AbstractTemperatureSensor::AbstractTemperatureSensor(unsigned int pin, int mode) : SimpleHardwareUnit(pin, mode) {
             
         };
         AbstractTemperatureSensor::~AbstractTemperatureSensor() {};
