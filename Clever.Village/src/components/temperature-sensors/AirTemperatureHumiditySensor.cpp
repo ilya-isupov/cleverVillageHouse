@@ -1,12 +1,12 @@
 #include "AirTemperatureHumiditySensor.h"
 
-void AirTemperatureHumiditySensor::begin() {
+void setup() {
   sensor.begin();
 }
 
 int AirTemperatureHumiditySensor::getTemperature() {
-  return sensor.tem;
+  return sensor.readTemperature;
 }
 int AirTemperatureHumiditySensor::getHumidity() {
-  return sensor.hum;
+  return sensor.readHumidity;
 }
