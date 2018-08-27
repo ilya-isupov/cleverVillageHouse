@@ -1,6 +1,12 @@
 #ifndef AirTemperatureHumiditySensor_H
 #define AirTemperatureHumiditySensor_H
 
+#if ARDUINO >= 100
+ #include "Arduino.h"
+#else
+ #include "WProgram.h"
+#endif
+
 #include "AbstractTemperatureSensor.h"
 
 
@@ -11,7 +17,6 @@
 class AirTemperatureHumiditySensor : public AbstractTemperatureSensor{
   public:
    AirTemperatureHumiditySensor(uint8_t type, uint8_t count=6);
-   void begin(void);
    int readTemperature(int PINS);
    int readHumidity(int PONS);
    boolean read(void);
@@ -24,17 +29,6 @@ class AirTemperatureHumiditySensor : public AbstractTemperatureSensor{
   bool lastresult;
 
   uint32_t expectPulse(bool level);
-
-};
-
-class InterruptLock {
-  public:
-   InterruptLock() {
-    noInterrupts();
-   }
-   ~InterruptLock() {
-    interrupts();
-   }
 
 };
 

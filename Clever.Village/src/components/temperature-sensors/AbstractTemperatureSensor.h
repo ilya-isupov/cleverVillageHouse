@@ -1,8 +1,8 @@
 #ifndef Abstract_Temperature_Sensor_H
 #define Abstract_Temperature_Sensor_H
 
-#include "../common/SimpleHardwareUnit.h"
 
+#include "../common/SimpleHardwareUnit.h"
 
 class AbstractTemperatureSensor : public SimpleHardwareUnit {
     public:
