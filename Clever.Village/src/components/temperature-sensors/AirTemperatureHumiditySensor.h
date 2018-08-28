@@ -2,7 +2,7 @@
 #define AirTemperatureHumiditySensor_H
 
 #include "AbstractTemperatureSensor.h"
-#include "Adafruit_AM2320.h"
+#include <Adafruit_AM2320.h>
 
 class AirTemperatureHumiditySensor : public AbstractTemperatureSensor{
   public:
