@@ -6,8 +6,8 @@
 
 class AirTemperatureHumiditySensor : public AbstractTemperatureSensor{
   public:
-  int getTemperature();
-  int getHumidity();
+  Adafruit_AM2320 getSensor();
+  void setup();
 
  private:
   Adafruit_AM2320 sensor = Adafruit_AM2320();

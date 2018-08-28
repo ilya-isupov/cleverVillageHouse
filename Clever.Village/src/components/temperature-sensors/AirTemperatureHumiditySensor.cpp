@@ -1,12 +1,9 @@
 #include "AirTemperatureHumiditySensor.h"
 
-void setup() {
+void AirTemperatureHumiditySensor::setup() {
   sensor.begin();
 }
 
-int AirTemperatureHumiditySensor::getTemperature() {
-  return sensor.readTemperature;
-}
-int AirTemperatureHumiditySensor::getHumidity() {
-  return sensor.readHumidity;
+Adafruit_AM2320 AirTemperatureHumiditySensor::getSensor(){
+  return sensor;
 }
