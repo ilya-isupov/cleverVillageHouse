@@ -4,6 +4,6 @@
         
     }
 
-    LiquidCrystal_1602_RUS DisplayI2C1602::getLCD() {
-        return lcd;
+    LiquidMenu DisplayI2C1602::getLCD() {
+        return lcd();
     }
