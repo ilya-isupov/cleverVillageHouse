@@ -1,12 +1,8 @@
-#ifndef Pellet_Burner_cpp
-#define Pellter_Burner_cpp
+#include "PelletBurner.h"
 
-class PelletBurner {
-    public:
-        PelletBurner() {};
-        ~PelletBurner() {};
-        void setup() {};
-        void run() {};
+PelletBurner::PelletBurner(){};
+PelletBurner::~PelletBurner(){};
+void PelletBurner::setup(){
 };
-
-#endif
+void PelletBurner::run(){
+};

@@ -6,7 +6,6 @@
 
 class AbstractTemperatureSensor : public SimpleHardwareUnit {
     public:
-        AbstractTemperatureSensor();
         AbstractTemperatureSensor(unsigned int pin);
         ~AbstractTemperatureSensor();
         void setup();

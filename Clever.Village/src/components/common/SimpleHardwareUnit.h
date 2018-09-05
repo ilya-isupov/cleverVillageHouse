@@ -6,7 +6,6 @@
 class SimpleHardwareUnit : public HardwareUnit
 {
   public:
-    SimpleHardwareUnit();
     SimpleHardwareUnit(unsigned int pin, int mode);
     ~SimpleHardwareUnit();
 

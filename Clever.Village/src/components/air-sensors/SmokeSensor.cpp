@@ -5,7 +5,6 @@
 
 class SmokeSensor : public AbstractAirSensor {
     public:
-        SmokeSensor() : AbstractAirSensor() {};
         SmokeSensor(unsigned int pin, int mode) : AbstractAirSensor(pin) {};
         ~SmokeSensor() {};
 };

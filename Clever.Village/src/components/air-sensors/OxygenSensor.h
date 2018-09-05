@@ -1,13 +1,12 @@
-#ifndef Oxygen_Sensor_cpp
-#define Oxygen_Sensor_cpp
+#ifndef OXYGENSENSOR_H
+#define OXYGENSENSOR_H
 
-#include "AbstractAirSensor.cpp"
+#include "AbstractAirSensor.h"
 
 class OxygenSensor : public AbstractAirSensor {
     public:
-        OxygenSensor() : AbstractAirSensor() {};
-        OxygenSensor(unsigned int pin, int mode) : AbstractAirSensor(pin) {};
-        ~OxygenSensor() {};
+        OxygenSensor(unsigned int pin);
+        ~OxygenSensor();
     private:
 };
 

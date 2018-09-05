@@ -20,7 +20,6 @@ class ClickButton : public AbstractButton
     void checkHeld();
     unsigned long getIdleTime();
   public:
-    ClickButton();
     ClickButton(unsigned int pin);
     ~ClickButton();
     void setup();

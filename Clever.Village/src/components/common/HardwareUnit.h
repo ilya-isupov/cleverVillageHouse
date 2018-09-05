@@ -11,9 +11,6 @@ public:
 
   virtual void setup();
   virtual void run();
-
-protected:
-  virtual void setPinMode();
   
 };
 #endif

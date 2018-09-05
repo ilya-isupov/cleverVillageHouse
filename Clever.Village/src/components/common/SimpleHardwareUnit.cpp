@@ -1,6 +1,5 @@
 #include "SimpleHardwareUnit.h"
 
-SimpleHardwareUnit::SimpleHardwareUnit() : HardwareUnit() {};
 SimpleHardwareUnit::SimpleHardwareUnit(unsigned int pin, int mode) {
     setPinMode(pin, mode);
 };

@@ -1,12 +1,12 @@
 #include <Arduino.h>
-#include "./modules/pellet-burner/PelletBurner.cpp"
+#include "./modules/pellet-burner/PelletBurner.h"
 
-PelletBurner *pelletBurner = new PelletBurner;
+PelletBurner pelletBurner = PelletBurner();
 
 void setup() {
-     pelletBurner->setup();
+     pelletBurner.setup();
 }
 
 void loop() {
-    pelletBurner->run();
+    pelletBurner.run();
 }

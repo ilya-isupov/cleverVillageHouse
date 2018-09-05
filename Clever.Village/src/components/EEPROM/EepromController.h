@@ -1,6 +1,6 @@
-#include "eeprom.h"
+#include "EEPROM.h"
 
-class ReadWriteEeprom {
+class EepromController {
     
     public:
         void write(int adr, uint8_t value);

@@ -1,6 +1,5 @@
 #include "ExtendedHardwareUnit.h"
 
-ExtendedHardwareUnit::ExtendedHardwareUnit() : HardwareUnit() {};
 ExtendedHardwareUnit::ExtendedHardwareUnit(int *pinModesArray) {
     setPinMode(pinModesArray);
 };
