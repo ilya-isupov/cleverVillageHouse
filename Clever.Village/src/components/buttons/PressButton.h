@@ -8,7 +8,7 @@ class PressButton : public ClickButton<U>
 {
     
   public:
-    PressButton(uint8_t pin, U *createContext);
+    PressButton(byte pin, U *createContext);
     ~PressButton();
     void setup();
     void run();

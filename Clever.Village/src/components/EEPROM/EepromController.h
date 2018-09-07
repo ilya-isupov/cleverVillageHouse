@@ -3,7 +3,7 @@
 class EepromController {
     
     public:
-        void write(int adr, uint8_t value);
-        void update(int adr, uint8_t value);
-        uint8_t read(int adr);
+        static void write(int adr, uint8_t value);
+        static void update(int adr, uint8_t value);
+        static uint8_t read(int adr);
 };

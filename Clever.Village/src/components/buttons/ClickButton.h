@@ -12,7 +12,7 @@ public:
 
   typedef void (*callbackFunction)(T *);
   // ----- Constructor -----
-  ClickButton(int pin, int active, T *createContext);
+  ClickButton(byte pin, int active, T *createContext);
 
   // ----- Set runtime parameters -----
 
@@ -42,7 +42,7 @@ public:
   void reset(void);
 
 private:
-  int _pin;           // hardware pin number.
+  byte _pin;           // hardware pin number.
   int _debounceTicks; // number of ticks for debounce times.
   int _clickTicks;    // number of ticks that have to pass by before a click is detected
   int _pressTicks;    // number of ticks that have to pass by before a long button press is detected

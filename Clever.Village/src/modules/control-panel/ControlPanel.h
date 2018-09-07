@@ -4,6 +4,7 @@
 #include "../../components/buttons/PressButton.h"
 #include "../../components/displays/Display16x2.h"
 #include "../../components/lamps/DiodLamp.h"
+#include "../enums/ControlPanelState.h"
 
 
 class ControlPanel {
@@ -25,9 +26,22 @@ class ControlPanel {
 
     private:
         static void onForwardClick(ControlPanel *context);
+        static void onForwardLongPressStart(ControlPanel *context);
+        static void onForwardLongPressStop(ControlPanel *context);
+        volatile boolean isForwardButtonPressingNow = false;
+
         static void onBackwardClick(ControlPanel *context);
+        static void onBackwardLongPressStart(ControlPanel *context);
+        static void onBackwardLongPressStop(ControlPanel *context);
+        volatile boolean isBackwardButtonPressingNow = false;
+
         static void onOkClick(ControlPanel *context);
         static void onTurnClick(ControlPanel *context);
+
+        boolean checkNeseccityShowSettings();
+        void openSettings();
+
+        volatile ControlPanelState state = WORK;
 
 };
 

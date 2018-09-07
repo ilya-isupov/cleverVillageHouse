@@ -1,7 +1,7 @@
 #include "PressButton.h"
 
 template <class U>
-PressButton<U>::PressButton(uint8_t pin, U *createContext) : ClickButton<U>(pin, true, createContext){};
+PressButton<U>::PressButton(byte pin, U *createContext) : ClickButton<U>(pin, true, createContext){};
 template <class U>
 PressButton<U>::~PressButton(){};
 

@@ -2,7 +2,7 @@
 
 // ----- Initialization and Default Values -----
 template <class T>
-ClickButton<T>::ClickButton(int pin, int activeLow, T *createContext)
+ClickButton<T>::ClickButton(byte pin, int activeLow, T *createContext)
 {
   _pin = pin;
   _context = createContext;
@@ -153,9 +153,9 @@ void ClickButton<T>::process(void)
 
     } else if ((buttonLevel == _buttonPressed) && ((unsigned long)(now - _startTime) > _pressTicks)) {
       _isLongPressed = true;  // Keep track of long press state
-      if (_pressFunc) _pressFunc();
-	  if (_longPressStartFunc) _longPressStartFunc();
-	  if (_duringLongPressFunc) _duringLongPressFunc();
+      if (_pressFunc) _pressFunc(_context);
+	  if (_longPressStartFunc) _longPressStartFunc(_context);
+	  if (_duringLongPressFunc) _duringLongPressFunc(_context);
       _state = 6; // step to state 6
       _stopTime = now; // remember stopping time
     } else {
@@ -178,7 +178,7 @@ void ClickButton<T>::process(void)
     // button bounces for too long.
     if (buttonLevel == _buttonReleased && ((unsigned long)(now - _startTime) > _debounceTicks)) {
       // this was a 2 click sequence.
-      if (_doubleClickFunc) _doubleClickFunc();
+      if (_doubleClickFunc) _doubleClickFunc(_context);
       _state = 0; // restart.
       _stopTime = now; // remember stopping time
 
@@ -187,13 +187,13 @@ void ClickButton<T>::process(void)
   } else if (_state == 6) { // waiting for menu pin being release after long press.
     if (buttonLevel == _buttonReleased) {
 	  _isLongPressed = false;  // Keep track of long press state
-	  if(_longPressStopFunc) _longPressStopFunc();
+	  if(_longPressStopFunc) _longPressStopFunc(_context);
       _state = 0; // restart.
       _stopTime = now; // remember stopping time
     } else {
 	  // button is being long pressed
 	  _isLongPressed = true; // Keep track of long press state
-	  if (_duringLongPressFunc) _duringLongPressFunc();
+	  if (_duringLongPressFunc) _duringLongPressFunc(_context);
     } // if
 
   } // if
