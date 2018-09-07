@@ -7,10 +7,10 @@
 
 
 class ControlPanel {
-    PressButton forwardButton = PressButton(1);
-    PressButton backwardButton = PressButton(1);
-    PressButton okButton = PressButton(1);
-    PressButton turnButton = PressButton(1);
+    PressButton<ControlPanel> forwardButton = PressButton<ControlPanel>(1, this);
+    PressButton<ControlPanel> backwardButton = PressButton<ControlPanel>(1, this);
+    PressButton<ControlPanel> okButton = PressButton<ControlPanel>(1, this);
+    PressButton<ControlPanel> turnButton = PressButton<ControlPanel>(1, this);
 
     DiodLamp ignitionLamp = DiodLamp(1);
     DiodLamp burningLamp = DiodLamp(1);
@@ -24,10 +24,10 @@ class ControlPanel {
         void run();
 
     private:
-        static void onForwardClick();
-        static void onBackwardClick();
-        static void onOkClick();
-        static void onTurnClick();
+        static void onForwardClick(ControlPanel *context);
+        static void onBackwardClick(ControlPanel *context);
+        static void onOkClick(ControlPanel *context);
+        static void onTurnClick(ControlPanel *context);
 
 };
 

@@ -1,7 +1,12 @@
 #include "PressButton.h"
 
-PressButton::PressButton(uint8_t pin) : OneButton(pin, true){};
-PressButton::~PressButton(){};
+template <class U>
+PressButton<U>::PressButton(uint8_t pin, U *createContext) : ClickButton<U>(pin, true, createContext){};
+template <class U>
+PressButton<U>::~PressButton(){};
 
-void PressButton::setup(){}
-void PressButton::run() {}
+template <class U>
+void PressButton<U>::setup(){};
+
+template <class U>
+void PressButton<U>::run() {};

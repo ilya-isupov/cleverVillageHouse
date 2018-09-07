@@ -1,13 +1,14 @@
 #ifndef Click_Button_h
 #define Click_Button_h
 
-#include "OneButton.h"
+#include "ClickButton.h"
 
-class PressButton : public OneButton
+template <class U>
+class PressButton : public ClickButton<U>
 {
     
   public:
-    PressButton(uint8_t pin);
+    PressButton(uint8_t pin, U *createContext);
     ~PressButton();
     void setup();
     void run();

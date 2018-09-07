@@ -6,3 +6,15 @@ void ControlPanel::setup() {
     okButton.attachClick(onOkClick);
     turnButton.attachClick(onTurnClick);
 }
+
+void ControlPanel::onForwardClick(ControlPanel *context) {
+}
+
+void ControlPanel::onBackwardClick(ControlPanel *context) {
+}
+
+void ControlPanel::onOkClick(ControlPanel *context) {
+}
+
+void ControlPanel::onTurnClick(ControlPanel *context) {
+}
