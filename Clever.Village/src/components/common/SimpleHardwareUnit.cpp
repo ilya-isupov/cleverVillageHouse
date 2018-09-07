@@ -1,6 +1,6 @@
 #include "SimpleHardwareUnit.h"
 
-SimpleHardwareUnit::SimpleHardwareUnit(unsigned int pin, int mode) {
+SimpleHardwareUnit::SimpleHardwareUnit(uint8_t pin, uint8_t mode) {
     setPinMode(pin, mode);
 };
 SimpleHardwareUnit::~SimpleHardwareUnit() {};
@@ -11,11 +11,11 @@ void SimpleHardwareUnit::run() {
 
 void SimpleHardwareUnit::setup() {
     HardwareUnit::setup();
-    pinMode(pin, pinWorkMode);
+    pinMode(unitPin, unitPinMode);
 }
 
-void SimpleHardwareUnit::setPinMode(unsigned int pin, int mode)
+void SimpleHardwareUnit::setPinMode(uint8_t pin, uint8_t mode)
 {
-    pinWorkMode = mode;
-    pin = pin;
+    unitPinMode = mode;
+    unitPin = pin;
 };

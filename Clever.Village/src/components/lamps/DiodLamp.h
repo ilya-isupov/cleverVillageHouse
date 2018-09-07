@@ -6,10 +6,10 @@
 class DiodLamp : public AbstractLamp
 {
   public:
-    DiodLamp(unsigned int pin);
+    DiodLamp(uint8_t pin);
     void setup();
-    virtual void lightOn();
-    virtual void lightOff();
+    void lightOn();
+    void lightOff();
     ~DiodLamp();
 };
 

@@ -1,16 +1,16 @@
 #ifndef CONTROLPANEL_H
 #define CONTROLPANEL_H
 
-#include "../../components/buttons/ClickButton.h"
+#include "../../components/buttons/PressButton.h"
 #include "../../components/displays/Display16x2.h"
 #include "../../components/lamps/DiodLamp.h"
 
 
 class ControlPanel {
-    ClickButton forwardButton = ClickButton(1);
-    ClickButton backwardButton = ClickButton(1);
-    ClickButton okButton = ClickButton(1);
-    ClickButton turnButton = ClickButton(1);
+    PressButton forwardButton = PressButton(1);
+    PressButton backwardButton = PressButton(1);
+    PressButton okButton = PressButton(1);
+    PressButton turnButton = PressButton(1);
 
     DiodLamp ignitionLamp = DiodLamp(1);
     DiodLamp burningLamp = DiodLamp(1);
@@ -22,6 +22,12 @@ class ControlPanel {
     public:
         void setup();
         void run();
+
+    private:
+        static void onForwardClick();
+        static void onBackwardClick();
+        static void onOkClick();
+        static void onTurnClick();
 
 };
 

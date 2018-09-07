@@ -6,16 +6,16 @@
 class SimpleHardwareUnit : public HardwareUnit
 {
   public:
-    SimpleHardwareUnit(unsigned int pin, int mode);
+    SimpleHardwareUnit(uint8_t pin, uint8_t mode);
     ~SimpleHardwareUnit();
 
-    void setPinMode(unsigned int pin, int mode);
+    void setPinMode(uint8_t pin, uint8_t mode);
     virtual void setup();
     virtual void run();
 
   protected:
-    unsigned int pin;
-    int pinWorkMode;
+    uint8_t unitPin;
+    uint8_t unitPinMode;
 };
 
 #endif

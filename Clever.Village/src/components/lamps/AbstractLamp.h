@@ -6,11 +6,11 @@
 class AbstractLamp : public SimpleHardwareUnit
 {
   public:
-    AbstractLamp(unsigned int pin);
+    AbstractLamp(uint8_t pin);
     ~AbstractLamp();
     void setup();
-    virtual void lightOn();
-    virtual void lightOff();
+    void lightOn();
+    void lightOff();
 };
 
 #endif
