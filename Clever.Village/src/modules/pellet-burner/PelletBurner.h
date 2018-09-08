@@ -5,6 +5,7 @@
 #include "../../components/lamps/DiodLamp.h"
 #include "../enums/PelletBurnerState.h"
 #include "../state-holder/PelletBurnerStateHolder.h"
+#include "../control-panel/ControlPanel.h"
 
 class PelletBurner {
     public:
@@ -14,6 +15,7 @@ class PelletBurner {
         void run();
 
     private:
+        ControlPanel controlPanel = ControlPanel();
         PelletBurnerStateHolder pelletBurnerStateHolder = PelletBurnerStateHolder();
 };
 

@@ -1,12 +1,17 @@
 #include <Arduino.h>
 #include "./modules/pellet-burner/PelletBurner.h"
 
-PelletBurner pelletBurner = PelletBurner();
+#include "./components/EEPROM/EepromController.h"
 
-void setup() {
-     pelletBurner.setup();
+PelletBurner pelletBurner = PelletBurner();
+byte testEEPROM;
+
+void setup()
+{
+    pelletBurner.setup();
 }
 
-void loop() {
+void loop()
+{
     pelletBurner.run();
 }

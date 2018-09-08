@@ -1,5 +1,5 @@
-#ifndef Click_Button_h
-#define Click_Button_h
+#ifndef PRESSBUTTON_H
+#define PRESSBUTTON_H
 
 #include "ClickButton.h"
 

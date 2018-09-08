@@ -2,6 +2,7 @@
 
 template <class U>
 PressButton<U>::PressButton(byte pin, U *createContext) : ClickButton<U>(pin, true, createContext){};
+
 template <class U>
 PressButton<U>::~PressButton(){};
 

@@ -21,9 +21,9 @@ void PelletBurnerStateHolder::setState(PelletBurnerState newState) {
 
 void PelletBurnerStateHolder::setup() {
     state = readStateFromEEPROM();
-    if(!state) {
-        state = LEARNING;
-        //start learn
+    if(state == EepromController::EMPTY_VALUE) {
+        setState(LEARNING);
+        writeStateToEEPROM();
     }
 }
 
