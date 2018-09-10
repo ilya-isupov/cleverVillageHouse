@@ -3,8 +3,8 @@
 
 #include "Arduino.h"
 #include "../enums/PelletBurnerState.h"
-#include "../constants/EEPROM/AddressList.h"
-#include "../../components/EEPROM/EepromController.h"
+#include "../constants/eeprom-constants/AddressList.h"
+#include "../../components/eeprom-controller/EepromController.h"
 
 class PelletBurnerStateHolder {
     public:

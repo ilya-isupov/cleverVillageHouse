@@ -41,6 +41,8 @@ ClickButton<T>::ClickButton(byte pin, int activeLow, T *createContext)
   _duringLongPressFunc = NULL;
 } // ClickButton
 
+template <class T>
+ClickButton<T>::~ClickButton(){};
 
 // explicitly set the number of millisec that have to pass by before a click is assumed as safe.
 template <class T>

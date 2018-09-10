@@ -9,7 +9,7 @@
 class ControlPanel
 {
     byte testPin = 1;
-    PressButton<ControlPanel> forwardButton = PressButton<ControlPanel>(testPin, this);
+    //PressButton<ControlPanel> forwardButton = PressButton<ControlPanel>(testPin, this);
     // PressButton<ControlPanel> backwardButton = PressButton<ControlPanel>(1, this);
     // PressButton<ControlPanel> okButton = PressButton<ControlPanel>(1, this);
     // PressButton<ControlPanel> turnButton = PressButton<ControlPanel>(1, this);

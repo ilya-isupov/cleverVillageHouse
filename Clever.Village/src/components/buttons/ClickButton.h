@@ -13,6 +13,7 @@ public:
   typedef void (*callbackFunction)(T *);
   // ----- Constructor -----
   ClickButton(byte pin, int active, T *createContext);
+  ~ClickButton();
 
   // ----- Set runtime parameters -----
 
