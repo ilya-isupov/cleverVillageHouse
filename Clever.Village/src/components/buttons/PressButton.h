@@ -6,14 +6,12 @@
 template <class U>
 class PressButton : public ClickButton<U>
 {
-    
-  public:
-    PressButton(byte pin, U *createContext);
-    ~PressButton();
-    void setup();
-    void run();
-    
 
+public:
+  PressButton(byte pin, U *createContext) : ClickButton<U>(pin, true, createContext) {}
+  ~PressButton(){};
+  void setup(){};
+  void run(){};
 };
 
 #endif
