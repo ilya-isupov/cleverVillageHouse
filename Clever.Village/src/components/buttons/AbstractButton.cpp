@@ -1,6 +1,8 @@
 #include "AbstractButton.h"
 
-AbstractButton::AbstractButton(unsigned int pin) : SimpleHardwareUnit(pin, INPUT_PULLUP){};
+AbstractButton::AbstractButton(uint8_t pin) : SimpleHardwareUnit(pin, INPUT_PULLUP){};
 AbstractButton::~AbstractButton(){};
 void AbstractButton::run() {}
-void AbstractButton::setup() {}
+void AbstractButton::setup() {
+    SimpleHardwareUnit::setup();
+}

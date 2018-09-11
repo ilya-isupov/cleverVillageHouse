@@ -2,11 +2,14 @@
 #include "./modules/pellet-burner/PelletBurner.h"
 
 PelletBurner pelletBurner = PelletBurner();
+byte testEEPROM;
 
-void setup() {
-     pelletBurner.setup();
+void setup()
+{
+    pelletBurner.setup();
 }
 
-void loop() {
+void loop()
+{
     pelletBurner.run();
 }

@@ -1,16 +1,16 @@
 #include "DiodLamp.h"
 
-DiodLamp::DiodLamp(unsigned int pin) : AbstractLamp(pin){};
+DiodLamp::DiodLamp(uint8_t pin) : AbstractLamp(pin){};
 DiodLamp::~DiodLamp(){}
 void DiodLamp::setup() {
     AbstractLamp::setup();
 }
 void DiodLamp::lightOn()
 {
-    digitalWrite(pin, HIGH);
+    digitalWrite(unitPin, HIGH);
 }
 
 void DiodLamp::lightOff()
 {
-    digitalWrite(pin, LOW);
+    digitalWrite(unitPin, LOW);
 }

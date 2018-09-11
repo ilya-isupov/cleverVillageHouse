@@ -6,10 +6,8 @@
 class AbstractButton : public SimpleHardwareUnit
 {
   public:
-    AbstractButton(unsigned int pin);
+    AbstractButton(uint8_t pin);
     ~AbstractButton();
-    virtual bool wasClicked();
-    virtual bool wasHold();
     virtual void run();
     virtual void setup();
 };
