@@ -7,6 +7,14 @@ void GSM::setup()
   String response = sendATCommand("AT+CMGF=1;&W");
 }
 
+bool GSM::onResponse() {
+  bool val = false;
+  if (gsm.available()) {
+    val = true;
+  }
+  return val;
+}
+
 void GSM::run()
 {
   if (gsm.available())
