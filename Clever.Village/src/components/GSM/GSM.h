@@ -17,9 +17,10 @@ class GSM : public ExtendedHardwareUnit{
         void setup();
         void run();
         void sendSMS(String phone, String message);
+
+    private:
         String sendATCommand(String value);
         String waitResponse();
-    
 
 };
 

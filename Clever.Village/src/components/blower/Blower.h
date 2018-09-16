@@ -7,12 +7,10 @@
 class Blower : public SimpleHardwareUnit {
 
     public: 
-        Blower(unsigned int pin);
+        Blower(uint8_t pin);
         Blower();
         ~Blower();
         void setMode(bool value);
-    private:
-        unsigned int pin;
 
 };
 #endif    
