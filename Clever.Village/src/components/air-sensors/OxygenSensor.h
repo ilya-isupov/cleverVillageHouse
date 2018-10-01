@@ -20,7 +20,7 @@ class OxygenSensor : public AbstractAirSensor {
         int currentValue;        
         float calculateLambda();
         void checkStartWorking();
-        void setWorkingMode();
+        void setWorkingMode(boolean mode);
         boolean getWorkingMode();
 };
 
