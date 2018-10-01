@@ -3,13 +3,13 @@
 OxygenSensor::OxygenSensor(uint8_t pin) : AbstractAirSensor(pin) {};
 OxygenSensor::~OxygenSensor(){};
 void OxygenSensor::run() {
-    AbstractAirSensor:run();
+    AbstractAirSensor::run();
     if(getWorkingMode()) {
         calculateLambda();
     }    
 }
 void OxygenSensor::setup() {
-    AbstractAirSensor:setup();
+    AbstractAirSensor::setup();
     startWork = millis();
 }
 float OxygenSensor::getLambdaValue() {

@@ -5,8 +5,10 @@
 
 class AbstractAirSensor : public SimpleHardwareUnit {
     public:
-        AbstractAirSensor(uint8_t pin) : SimpleHardwareUnit(pin, INPUT) {};
-        ~AbstractAirSensor() {};
+        AbstractAirSensor(uint8_t pin);
+        ~AbstractAirSensor();
+        void setup();
+        void run();
 };
 
 #endif

@@ -1,7 +1,7 @@
 #ifndef Smoke_Sensor_cpp
 #define Smoke_Sensor_cpp
 
-#include "AbstractAirSensor.cpp"
+#include "AbstractAirSensor.h"
 
 class SmokeSensor : public AbstractAirSensor {
     public:
