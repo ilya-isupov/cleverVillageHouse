@@ -11,17 +11,14 @@ class PelletBurnerStateHolder {
         PelletBurnerStateHolder();
         ~PelletBurnerStateHolder();
 
-        PelletBurnerState getState();
-        void setState(PelletBurnerState newState);
+        int getState();
+        void setState(int newState);
 
         void setup();
     private:
-        volatile PelletBurnerState state;
+        volatile int state;
 
-        byte convertStateToByte(PelletBurnerState stateToConvert);
-        PelletBurnerState convertByteToState(byte convertedState);
-
-        PelletBurnerState readStateFromEEPROM();
+        int readStateFromEEPROM();
         void writeStateToEEPROM();
 };
 

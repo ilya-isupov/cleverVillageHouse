@@ -5,16 +5,16 @@ ControlPanel::~ControlPanel() {}
 
 void ControlPanel::setup()
 {
-    // forwardButton.attachClick(onForwardClick);
-    // forwardButton.attachLongPressStart(onForwardLongPressStart);
-    // forwardButton.attachLongPressStop(onForwardLongPressStop);
+    forwardButton.attachClick(onForwardClick);
+    forwardButton.attachLongPressStart(onForwardLongPressStart);
+    forwardButton.attachLongPressStop(onForwardLongPressStop);
 
-    // backwardButton.attachClick(onBackwardClick);
-    // backwardButton.attachLongPressStart(onBackwardLongPressStart);
-    // backwardButton.attachLongPressStop(onBackwardLongPressStop);
+    backwardButton.attachClick(onBackwardClick);
+    backwardButton.attachLongPressStart(onBackwardLongPressStart);
+    backwardButton.attachLongPressStop(onBackwardLongPressStop);
 
-    // okButton.attachClick(onOkClick);
-    // turnButton.attachClick(onTurnClick);
+    okButton.attachClick(onOkClick);
+    turnButton.attachClick(onTurnClick);
 }
 
 void ControlPanel::run()

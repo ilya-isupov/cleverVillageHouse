@@ -14,12 +14,12 @@ class ControlPanel
     PressButton<ControlPanel> okButton = PressButton<ControlPanel>(1, this);
     PressButton<ControlPanel> turnButton = PressButton<ControlPanel>(1, this);
 
-    // DiodLamp ignitionLamp = DiodLamp(1);
-    // DiodLamp burningLamp = DiodLamp(1);
-    // DiodLamp ignitionErrorLamp = DiodLamp(1);
-    // DiodLamp overheatLamp = DiodLamp(1);
+    DiodLamp ignitionLamp = DiodLamp(1);
+    DiodLamp burningLamp = DiodLamp(1);
+    DiodLamp ignitionErrorLamp = DiodLamp(1);
+    DiodLamp overheatLamp = DiodLamp(1);
 
-    // Display16x2 display = Display16x2();
+    //Display16x2 display = Display16x2();
 
   public:
     ControlPanel();

@@ -15,8 +15,8 @@ class PelletBurner {
         void run();
 
     private:
-        ControlPanel controlPanel = ControlPanel();
-        PelletBurnerStateHolder pelletBurnerStateHolder = PelletBurnerStateHolder();
+        ControlPanel controlPanel;
+        PelletBurnerStateHolder pelletBurnerStateHolder;
 };
 
 #endif
