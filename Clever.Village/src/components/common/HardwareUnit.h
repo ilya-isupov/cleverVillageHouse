@@ -9,8 +9,8 @@ public:
   HardwareUnit();
   ~HardwareUnit();
 
-  virtual void setup();
-  virtual void run();
+  void setup();
+  void run();
   
 };
 #endif

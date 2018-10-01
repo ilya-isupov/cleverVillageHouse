@@ -10,8 +10,8 @@ class SimpleHardwareUnit : public HardwareUnit
     ~SimpleHardwareUnit();
 
     void setPinMode(uint8_t pin, uint8_t mode);
-    virtual void setup();
-    virtual void run();
+    void setup();
+    void run();
 
   protected:
     uint8_t unitPin;
