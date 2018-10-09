@@ -1,15 +1,25 @@
 
 #include "GSM.h"
 
+GSM::GSM(uint8_t Rx, uint8_t Tx) {
+  this->setRxTx(Rx, Tx);
+  this->serialInterface = new SoftwareSerial(Rx, Tx);
+}
+
+void GSM::setRxTx(uint8_t Rx, uint8_t Tx) {
+  this->Rx = Rx;
+  this->Tx = Tx;
+}
+
 void GSM::setup()
 {
-  gsm.begin(9600);
+  this->serialInterface->begin(9600);
   String response = sendATCommand("AT+CMGF=1;&W");
 }
 
 bool GSM::onResponse() {
   bool val = false;
-  if (gsm.available()) {
+  if (this->serialInterface->available()) {
     val = true;
   }
   return val;
@@ -17,7 +27,7 @@ bool GSM::onResponse() {
 
 void GSM::run()
 {
-  if (gsm.available())
+  if (this->serialInterface->available())
   {
     String response = waitResponse();
     response.trim();
@@ -37,7 +47,7 @@ void GSM::run()
 String GSM::sendATCommand(String value)
 {
   String resp = "";
-  gsm.println(value);
+  this->serialInterface->println(value);
   resp = waitResponse();
   if (resp.startsWith(value))
   {
@@ -51,12 +61,12 @@ String GSM::waitResponse()
 {
   String resp = "";
   long timeout = millis() + 10000;
-  while (!gsm.available() && millis() < timeout)
+  while (!this->serialInterface->available() && millis() < timeout)
   {
   };
-  if (gsm.available())
+  if (this->serialInterface->available())
   {
-    resp = gsm.readString();
+    resp = this->serialInterface->readString();
   }
   return resp;
 }

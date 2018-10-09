@@ -5,15 +5,11 @@
 #include "SoftwareSerial.h"
 #include "../common/ExtendedHardwareUnit.h"
 
-unsigned int RX, TX;
-SoftwareSerial gsm(RX, TX);
 
-class GSM : public ExtendedHardwareUnit{
+class GSM : public ExtendedHardwareUnit {
     public:
-        GSM();
-        GSM(unsigned int RX, unsigned int TX);
-        ~GSM();
-        void setRXTX(unsigned int RX, unsigned int TX);
+        GSM(uint8_t Rx, uint8_t Tx);
+        ~GSM();        
         void setup();
         void run();
         void sendSMS(String phone, String message);
@@ -21,6 +17,9 @@ class GSM : public ExtendedHardwareUnit{
     private:
         String sendATCommand(String value);
         String waitResponse();
+        void setRxTx(uint8_t Rx, uint8_t Tx);
+        uint8_t Rx, Tx;
+        SoftwareSerial *serialInterface;
 
 };
 
