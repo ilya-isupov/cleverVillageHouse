@@ -55,6 +55,8 @@ void loop() {
       result.trim();                            // Убираем пробельные символы в начале/конце
       if (result.equals("startHeat")) {
           digitalWrite(8, HIGH);
+          delay(500);
+          digitalWrite(8, LOW);
         }
       
       sendATCommand("AT+CMGD=4", true); // Удалить все сообщения, чтобы не забивали память модуля
